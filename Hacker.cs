@@ -55,11 +55,13 @@ public class Hacker : MonoBehaviour
         else if (input == "2")
         {
             level = 2;
+            password = "peterparker";
             StartGame(level);
         }
         else if (input == "3")
         {
             level = 3;
+            password = "shubham";
             StartGame(level);
         }
         else
