@@ -1,13 +1,15 @@
-﻿using System.Globalization;
+using System;
+using System.Globalization;
 using UnityEngine;
 
-public class Hacker : MonoBehaviour 
+public class Hacker : MonoBehaviour
 {
 
     //game state
     int level;
     enum Screen { MainMenu, Password, Win };
     Screen currentScreen = Screen.MainMenu;
+    string password;
 
     // use this for intiallization
     void Start()
@@ -28,20 +30,26 @@ public class Hacker : MonoBehaviour
         if (input == "menu")
         {
             ShowMainMenu();
-            currentScreen = Screen.MainMenu;    
+            currentScreen = Screen.MainMenu;
         }
 
         else if (currentScreen == Screen.MainMenu)
         {
-           RunMainMenu(input);
+            RunMainMenu(input);
+        }
+        else if (currentScreen == Screen.Password)
+        {
+            CheckPassword(input);
         }
     }
 
+  
     void RunMainMenu(string input)
     {
         if (input == "1")
         {
             level = 1;
+            password = "tonystark";
             StartGame(level);
         }
         else if (input == "2")
@@ -66,4 +74,16 @@ public class Hacker : MonoBehaviour
         Terminal.WriteLine("You have chosen " + levelnumber);
         Terminal.WriteLine("Please enter your password ");
     }
+    void CheckPassword(string input)
+    {
+        if (password == input)
+        {
+            Terminal.WriteLine("well Done");
+        }
+        else 
+        {
+            Terminal.WriteLine("sorry bro, wrong password");
+        }
+    }
+
 }
