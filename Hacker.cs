@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 public class Hacker : MonoBehaviour
 {
@@ -61,10 +60,12 @@ public class Hacker : MonoBehaviour
         switch(level)
         {
             case 1:
-                password = level1passwords[0];
+                int index = Random.Range(0, level1passwords.Length);
+                password = level1passwords[index];
                 break;
             case 2:
-                password = level2passwords[0];
+                int index2 = Random.Range(0, level2passwords.Length);
+                password = level2passwords[index2];
                 break;
             default:
                 Debug.LogError("invalid level number");
@@ -77,6 +78,7 @@ public class Hacker : MonoBehaviour
         if (password == input)
         {
             Terminal.WriteLine("well Done");
+           // currentScreen(Screen.MainMenu);
         }
         else
         {
