@@ -1,3 +1,4 @@
+using UnityEditorInternal;
 using UnityEngine;
 public class Hacker : MonoBehaviour
 {
@@ -75,15 +76,37 @@ public class Hacker : MonoBehaviour
     }
     void CheckPassword(string input)
     {
-        if (password == input)
+        if (input == password)
         {
-            Terminal.WriteLine("well Done");
-           // currentScreen(Screen.MainMenu);
+            DisplayWinScreen();
         }
         else
         {
             Terminal.WriteLine("sorry bro, wrong password");
         }
     }
+    void DisplayWinScreen()
+    {
+        currentScreen = Screen.Win;
+        Terminal.ClearScreen();
+        ShowLevelReward();
+    }
 
+     void ShowLevelReward()
+    {
+        switch(level)
+            {
+        case 1:
+            Terminal.WriteLine("Have a Book...");    
+                    Terminal.WriteLine(@"
+    _______
+   /     / /
+  /     / /
+ /     / / 
+(_____( /
+"
+            );
+            break;
+        }
+    }
 }
