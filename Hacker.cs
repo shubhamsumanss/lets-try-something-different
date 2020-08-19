@@ -49,18 +49,6 @@ public class Hacker : MonoBehaviour
             level = int.Parse(input);
             StartGame();
         }
-       /* if (input == "1")
-        {
-            level = 1;
-            password = level1passwords[2]; // todo make random 
-            StartGame();
-        }
-        else if (input == "2")
-        {
-            level = 2;
-            password = level2passwords[4];
-            StartGame();
-        } */
         else
         {
             Terminal.WriteLine("Please choose a valid level");
