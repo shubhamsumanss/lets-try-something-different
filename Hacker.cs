@@ -96,15 +96,7 @@ public class Hacker : MonoBehaviour
         switch(level)
             {
         case 1:
-            Terminal.WriteLine("Have a Book...");    
-                    Terminal.WriteLine(@"
-    _______
-   /     / /
-  /     / /
- /     / / 
-(_____( /
-"
-            );
+            Terminal.WriteLine("Have a Book...");  
             break;
         }
     }
